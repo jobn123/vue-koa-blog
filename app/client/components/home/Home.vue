@@ -2,18 +2,21 @@
   <div class="home">
     <Nav></Nav>
     <Banner></Banner>
+    <Acticle></Acticle>
   </div>
 </template>
 
 <script>
 import Nav from './Nav';
 import Banner from './Banner';
+import Acticle from '../acticle/acticle'
 
 export default {
   name: 'home',
   components: {
     Nav,
     Banner,
+    Acticle,
   },
   data() {
     return {

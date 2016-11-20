@@ -6,7 +6,7 @@
       <li><a href="#">BLOG</a><span></span></li>
       <li><a href="#">ME</a><span></span></li>
       <li><a href="#">TAG</a><span></span></li>
-      <li><a href="#">HOME</a><span></span></li>
+      <li><a href="#">PHOTO</a><span></span></li>
     </ul>
   </div>
 </template>
