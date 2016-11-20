@@ -26,29 +26,29 @@ export default {
 <style scoped>
 .nav {
   width: 20rem;
-  height: 1.3055555555555556rem;
+  height: 0.734375rem;
 }
 .nav-cricle {
-  width: 0.5833333333333334rem;
-  height: 0.5833333333333334rem;
-  border-radius: 0.2916666666666667rem;
-  border: 0.08333333333333333rem solid #00b2a0;
-  margin-left: 0.7222222222222222rem;
-  margin-top: 0.3611111111111111rem;
+  width: 0.328125rem;
+  height: 0.328125rem;
+  border-radius: 0.1640625rem;
+  border: 0.046875rem solid #00b2a0;
+  margin-left: 0.40625rem;
+  margin-top: 0.203125rem;
   float: left;
 }
 ul {
   float: right;
-  height: 1.3055555555555556rem;
+  height: 0.734375rem;
   list-style: none;
-  line-height: 1.3055555555555556rem;
+  line-height: 0.734375rem;
   font-size: 0;/**去除inline-block的间隙*/
 }
 ul > li {
   position: relative;
   /*float: right;*/
   display: inline-block;
-  font-size: 0.3888888888888889rem;
+  font-size: 0.25rem;
   margin-right: 0.6944444444444444rem;
 }
 ul > li > a {
@@ -59,10 +59,10 @@ ul > li > a {
 .active span {
   display: inline-block;
   position: absolute;
-  width: 0.6944444444444444rem;
+  width: 0.390625rem;
   height: 0.027777777777777776rem;
   border: solid 0.5px #fcbb08;
-  top: 1rem;
+  top: 0.5625rem;
   left: 25%;
 }
 </style>
