@@ -1,5 +1,5 @@
 <template>
-  <div class="nav">
+  <div class="headernav">
     <div class="nav-cricle"></div>
     <ul>
       <li class="active"><a href="#">HOME</a><span></span></li>
@@ -7,13 +7,14 @@
       <li><a href="#">ME</a><span></span></li>
       <li><a href="#">TAG</a><span></span></li>
       <li><a href="#">PHOTO</a><span></span></li>
+      <li><router-link to="/write">write<span></span></router-link></li>
     </ul>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'nav',
+  name: 'headernav',
   data() {
     return {
       msg: 'Welcome to Your Vue.js App',
@@ -24,7 +25,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.nav {
+.headernav {
   width: 20rem;
   height: 0.734375rem;
 }

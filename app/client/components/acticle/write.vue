@@ -1,22 +1,16 @@
 <template>
-  <div class="home">
-    <HeaderNav></HeaderNav>
-    <Banner></Banner>
-    <Acticle></Acticle>
+  <div class="write">
+    <VueMarkdown></VueMarkdown>
   </div>
 </template>
 
 <script>
-import HeaderNav from './Nav';
-import Banner from './Banner';
-import Acticle from '../acticle/acticle'
+import VueMarkdown from 'vue-markdown'
 
 export default {
-  name: 'home',
+  name: 'write',
   components: {
-    HeaderNav,
-    Banner,
-    Acticle,
+    VueMarkdown,
   },
   data() {
     return {

@@ -1,5 +1,8 @@
 import Vue from 'vue';
 import App from './App';
+import VueResource from 'vue-resource'
+import VueRouter from 'vue-router'
+import routes from './routes';
 
 (function (doc, win) {
   var docEl = doc.documentElement,
@@ -14,8 +17,22 @@ if (!doc.addEventListener) return;
   doc.addEventListener('DOMContentLoaded', recalc, false);
 })(document, window);
 /* eslint-disable no-new */
+// new Vue({
+//   el: '#app',
+//   template: '<App/>',
+//   components: { App },
+// });
+// Vue.use(VueResource);
+Vue.use(VueRouter);
+const router = new VueRouter({
+  mode: 'history',
+  base: __dirname,
+  routes,
+});
+
 new Vue({
   el: '#app',
-  template: '<App/>',
-  components: { App },
-});
+  router,
+  // replace the content of <div id="app"></div> with App
+  render: h => h(App)
+})

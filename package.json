@@ -15,7 +15,10 @@
     "koa": "^1.2.4",
     "koa-bodyparser": "^2.3.0",
     "koa-router": "^5.4.0",
-    "vue": "^2.0.1"
+    "vue": "^2.0.1",
+    "vue-markdown": "^1.2.0",
+    "vue-resource": "^1.0.3",
+    "vue-router": "^2.0.3"
   },
   "devDependencies": {
     "autoprefixer": "^6.4.0",
