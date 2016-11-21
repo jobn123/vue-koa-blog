@@ -3,13 +3,6 @@
     <HeaderNav></HeaderNav>
     <Banner></Banner>
     <Acticle></Acticle>
-
-    <template v-if="$route.matched.length">
-     <router-view></router-view>
-   </template>
-   <template v-else>
-     <p>You are logged </p>
-   </template>
   </div>
 </template>
 
