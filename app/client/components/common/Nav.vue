@@ -2,10 +2,10 @@
   <div class="headernav">
     <div class="nav-cricle"></div>
     <ul>
-      <li class="active"><a href="#">BLOG</a><span></span></li>
-      <li><a href="#">TAG</a><span></span></li>
+      <li class="active"><router-link to="/">BLOG</router-link><span></span></li>
+      <li><router-link to="/tag">TAG</router-link><span></span></li>
       <li><a href="#">PHOTO</a><span></span></li>
-      <li><a href="#">ME</a><span></span></li>
+      <li><router-link to="/me">ME</router-link><span></span></li>
       <li><router-link to="/write">POST</router-link><span></span></li>
     </ul>
   </div>
