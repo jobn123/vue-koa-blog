@@ -16,23 +16,19 @@ if (!doc.addEventListener) return;
   win.addEventListener(resizeEvt, recalc, false);
   doc.addEventListener('DOMContentLoaded', recalc, false);
 })(document, window);
-/* eslint-disable no-new */
-// new Vue({
-//   el: '#app',
-//   template: '<App/>',
-//   components: { App },
-// });
-// Vue.use(VueResource);
+
 Vue.use(VueRouter);
+Vue.use(VueResource);
+
 const router = new VueRouter({
   mode: 'history',
   base: __dirname,
-  routes,
+  routes: routes,
 });
 
 new Vue({
   el: '#app',
-  router,
+  router: router,
   // replace the content of <div id="app"></div> with App
   render: h => h(App)
 })

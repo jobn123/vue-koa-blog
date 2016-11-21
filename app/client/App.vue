@@ -1,6 +1,12 @@
 <template>
   <div id="app">
-    <Home></Home>
+    <!-- <Home></Home> -->
+    <template v-if="$route.matched.length">
+     <router-view></router-view>
+   </template>
+   <template v-else>
+     <p>You are logged </p>
+   </template>
   </div>
 </template>
 

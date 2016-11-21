@@ -7,7 +7,7 @@
       <li><a href="#">ME</a><span></span></li>
       <li><a href="#">TAG</a><span></span></li>
       <li><a href="#">PHOTO</a><span></span></li>
-      <li><router-link to="/write">write<span></span></router-link></li>
+      <li><router-link to="/write">write</router-link><span></span></li>
     </ul>
   </div>
 </template>
