@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import HeaderNav from './components/home/Nav';
+import HeaderNav from './components/common/Nav';
 import HeaderFooter from './components/common/Footer';
 
 export default {
