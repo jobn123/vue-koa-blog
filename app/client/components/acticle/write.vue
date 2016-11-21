@@ -1,7 +1,7 @@
 <template>
   <div id="editor">
     <textarea :value="input" @input="update"></textarea>
-    <div v-html="compiledMarkdown"></div>
+    <div v-html="compiledMarkdown" id="editorHtml"></div>
   </div>
 </template>
 
@@ -36,22 +36,31 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   textarea, #editor div {
-  display: inline-block;
-  width: 49%;
-  height: 100%;
-  vertical-align: top;
-  box-sizing: border-box;
-  padding: 0 20px;
+    display: inline-block;
+    width: 49%;
+    height: 9.375rem;
+    vertical-align: top;
+    box-sizing: border-box;
+    padding: 0 20px;
+    overflow: scroll;
   }
 
   textarea {
-  border: none;
-  border-right: 1px solid #ccc;
-  resize: none;
-  outline: none;
-  background-color: #f6f6f6;
-  font-size: 14px;
-  font-family: 'Monaco', courier, monospace;
-  padding: 20px;
+    border: none;
+    border-right: 1px solid #ccc;
+    resize: none;
+    outline: none;
+    background-color: #f6f6f6;
+    font-size: 14px;
+    font-family: 'Monaco', courier, monospace;
+    padding: 20px;
+  }
+
+  code {
+    color: #f66;
+  }
+
+  #editorHtml {
+    font-size: 0.2rem;
   }
 </style>

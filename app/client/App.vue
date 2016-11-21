@@ -1,22 +1,25 @@
 <template>
   <div id="app">
-    <!-- <Home></Home> -->
+    <HeaderNav></HeaderNav>
     <template v-if="$route.matched.length">
-     <router-view></router-view>
-   </template>
-   <template v-else>
-     <p>You are logged </p>
-   </template>
+      <router-view></router-view>
+    </template>
+    <template v-else>
+      <p>You are logged </p>
+    </template>
+    <HeaderFooter></HeaderFooter>
   </div>
 </template>
 
 <script>
-import Home from './components/home/Home';
+import HeaderNav from './components/home/Nav';
+import HeaderFooter from './components/common/Footer';
 
 export default {
   name: 'app',
   components: {
-    Home,
+    HeaderNav,
+    HeaderFooter
   },
 };
 </script>

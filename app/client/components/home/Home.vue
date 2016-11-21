@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <HeaderNav></HeaderNav>
+    <!-- <HeaderNav></HeaderNav> -->
     <Banner></Banner>
     <Acticle></Acticle>
   </div>
