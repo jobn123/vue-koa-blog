@@ -1,20 +1,22 @@
 <template>
-  <div id="editor">
+  <!-- <div id="editor">
     <textarea :value="input" @input="update"></textarea>
     <div v-html="compiledMarkdown" id="editorHtml"></div>
-  </div>
+  </div> -->
+  <vue-markdown>i am a ~~tast~~ **test**</vue-markdown>
 </template>
 
 <script>
 // import VueMarkdown from 'vue-markdown'
 import _ from 'lodash'
 import marked from 'marked'
+import VueMarkdown from 'vue-markdown'
 
 export default {
   name: 'write',
-  // components: {
-  //   VueMarkdown,
-  // },
+  components: {
+    VueMarkdown,
+  },
   data() {
     return {
       input: '# hello'
