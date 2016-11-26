@@ -6,16 +6,17 @@ const koa = require('koa'),
       co = require('co'),
       controllers = require('./controllers/index.js'),
       mongoose = require('mongoose');
-      // User = mongoose.model("User");
+      UserModel = require('./models/user.js');
+      User = mongoose.model(UserModel);
 // app.use(function *(){
 //   this.body = 'hello world'
 // })
-// router.get('/', function* (next){
-//   var User = new User({
-//     uid
-//   })
-//   this.body = yield User.find({});
-// })
+router.get('/', function* (next){
+  var User = new User({
+    uid
+  })
+  this.body = yield User.find({});
+})
 co(function* (){
   app.use(bodyParser())
   yield controllers.init(router)

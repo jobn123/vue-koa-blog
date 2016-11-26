@@ -5,4 +5,5 @@ var UserSchema = new mongoose.schema({
   createTime: Date,
   lastLogin: Date
 })
- module.exports = mongoose.model('User',UserSchema);
+module.exports = UserSchema;
+ // module.exports = mongoose.model('User',UserSchema);
