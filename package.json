@@ -17,6 +17,7 @@
     "koa-router": "^5.4.0",
     "lodash": "^4.17.2",
     "marked": "^0.3.6",
+    "mongolass": "^2.3.2",
     "mongoose": "^4.6.8",
     "vue": "^2.0.1",
     "vue-markdown": "^1.2.0",

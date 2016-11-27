@@ -5,17 +5,25 @@ const koa = require('koa'),
       router = require('koa-router')(),
       co = require('co'),
       controllers = require('./controllers/index.js'),
-      mongoose = require('mongoose');
-      UserModel = require('./models/user.js');
-      User = mongoose.model(UserModel);
+      Mongolass = require('Mongolass'),
+      mongolass = new Mongolass('mongodb://localhost:27017/blog'),
+      User = mongolass.model('User', {
+                name: { type: 'string' },
+                age: { type: 'number' }
+              });
 // app.use(function *(){
 //   this.body = 'hello world'
 // })
 router.get('/', function* (next){
-  var User = new User({
-    uid
+  console.log('========');
+  yield User
+  .insertOne({ name: 'joker', age: 20 })
+  .exec()
+  .then(console.log('insert done'))
+  .catch(function (e) {
+    console.error(e);
+    console.error(e.stack);
   })
-  this.body = yield User.find({});
 })
 co(function* (){
   app.use(bodyParser())
