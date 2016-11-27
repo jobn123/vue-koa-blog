@@ -1,5 +1,9 @@
 <template>
-  <div id="editor">
+
+  <div id="editor" class="markdown-body">
+    <h1>
+      Write Your World !
+    </h1>
     <textarea :value="input" @input="update"></textarea>
     <div v-html="compiledMarkdown" id="editorHtml"></div>
   </div>
@@ -9,6 +13,7 @@
 <script>
 import _ from 'lodash'
 import marked from 'marked'
+require('github-markdown-css')
 // import VueMarkdown from 'vue-markdown'
 
 export default {
@@ -53,12 +58,11 @@ export default {
     font-family: 'Monaco', courier, monospace;
     padding: 20px;
   }
-
-  code {
-    color: #f66;
+  h1 {
+    text-align: center;
   }
 
   #editorHtml {
-    font-size: 0.2rem;
+    /*font-size: 0.2rem;*/
   }
 </style>

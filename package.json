@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "co": "^4.6.0",
+    "github-markdown-css": "^2.4.1",
     "koa": "^1.2.4",
     "koa-bodyparser": "^2.3.0",
     "koa-router": "^5.4.0",
