@@ -1,13 +1,21 @@
 <template>
-
-  <div id="editor" class="markdown-body">
-    <h1>
-      Write Your World !
-    </h1>
-    <textarea :value="input" @input="update"></textarea>
-    <div v-html="compiledMarkdown" id="editorHtml"></div>
+  <div>
+    <div class="" style="width:100%">
+      <div class="" style="float: left; width:60%">
+        <div class="" style="float: left">
+          <span>title</span><input type="text" name="title" value="">
+        </div>
+        <div class="" style="float: right">
+          <span>tag</span><input type="text" name="tag" value="">
+        </div>
+      </div>
+      <div class="" style="float: right; width: 25%">post</div>
+    </div>
+    <div id="editor" class="markdown-body">
+      <textarea :value="input" @input="update"></textarea>
+      <div v-html="compiledMarkdown" id="editorHtml"></div>
+    </div>
   </div>
-
 </template>
 
 <script>
@@ -63,6 +71,7 @@ export default {
   }
 
   #editorHtml {
+    background-color: aliceblue
     /*font-size: 0.2rem;*/
   }
 </style>
