@@ -9,7 +9,7 @@
           <span>tag</span><input type="text" name="tag" value="">
         </div>
       </div>
-      <div class="" style="float: right; width: 25%">post</div>
+      <div class="" style="float: right; width: 25%" v-on:click=" postAction">post</div>
     </div>
     <div id="editor" class="markdown-body">
       <textarea :value="input" @input="update"></textarea>
@@ -21,8 +21,8 @@
 <script>
 import _ from 'lodash'
 import marked from 'marked'
+import 'whatwg-fetch'
 require('github-markdown-css')
-// import VueMarkdown from 'vue-markdown'
 
 export default {
   name: 'write',
@@ -39,7 +39,20 @@ export default {
   methods: {
     update: _.debounce(function (e) {
       this.input = e.target.value
-    }, 300)
+    }, 300),
+    postAction: function() {
+      fetch('http://localhost:5000/articles',{
+        // method: 'post',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        credentials: 'include',
+        cache: 'default',
+        mode:'cors'
+      }).then(function(data){
+        debugger
+      })
+    }
   }
 };
 </script>
