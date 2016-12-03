@@ -3,10 +3,10 @@
     <div class="" style="width:100%">
       <div class="" style="float: left; width:60%">
         <div class="" style="float: left">
-          <span>title</span><input type="text" name="title" value="">
+          <span>title</span><input type="text" name="title" :value="title">
         </div>
         <div class="" style="float: right">
-          <span>tag</span><input type="text" name="tag" value="">
+          <span>tag</span><input type="text" name="tag" :value="tag">
         </div>
       </div>
       <div class="" style="float: right; width: 25%" v-on:click=" postAction">post</div>
@@ -28,7 +28,9 @@ export default {
   name: 'write',
   data() {
     return {
-      input: '# hello'
+      input: '# hello',
+      title: '',
+      tag:'',
     }
   },
   computed: {
@@ -42,13 +44,18 @@ export default {
     }, 300),
     postAction: function() {
       fetch('http://localhost:5000/articles',{
-        // method: 'post',
+        method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
         credentials: 'include',
         cache: 'default',
-        mode:'cors'
+        mode:'cors',
+        body: JSON.stringify({
+          title: this.title,
+          tag: this.tag,
+          content: this.input
+        })
       }).then(function(data){
         debugger
       })
