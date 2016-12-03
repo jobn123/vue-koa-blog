@@ -10,7 +10,8 @@ module.exports.init = function* (router) {
   console.log('hihihihihihi2');
   router.get('/articles', articleList);
   router.get('/articles/:id', articleDetail);
-  router.post('/articles', articleList);
+  router.post('/articles/:id', articleDetail);
+  router.post('/getArticleLists', getArticleLists);
   // router.patch('/articles/:id', mw.verify_token, modify);
   // router.get('/hidden-articles', mw.verify_token, hiddenArticleList);
   // router.get('/hidden-articles/:id', mw.verify_token, hiddenArticleDetail);
@@ -41,6 +42,22 @@ function* articleList(){
     success: true
   }
   console.log('=========articleList=========')
+}
+function* getArticleLists() {
+  yield Article
+        .find()
+        .exec()
+        .then(function(data){
+          console.log(data);
+          console.log('get article list done');
+        })
+        .catch(function(){
+          console.log('select article error');
+        })
+      this.status = 200;
+      this.body = {
+        success: true
+      }
 }
 function* articleDetail(){
   console.log('==========articleDetail============');

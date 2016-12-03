@@ -11,7 +11,7 @@
 </template>
 
 <script>
-
+import 'whatwg-fetch'
 export default {
   name: 'acticle',
   data() {
@@ -20,6 +20,19 @@ export default {
       msg:'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
     };
   },
+  created() {
+    fetch('http://localhost:5000/getArticleLists',{
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      credentials: 'include',
+      cache: 'default',
+      mode:'cors',
+    }).then(function(data){
+      debugger
+    })
+  }
 };
 </script>
 
