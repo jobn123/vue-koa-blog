@@ -29,8 +29,12 @@ export default {
       credentials: 'include',
       cache: 'default',
       mode:'cors',
-    }).then(function(data){
-      debugger
+    }).then((data) => {
+      return data.json()
+    }).then((data) => {
+      // debugger
+      this.title = data.data[0].title;
+      this.msg = data.data[0].content
     })
   }
 };

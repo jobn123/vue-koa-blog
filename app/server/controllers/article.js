@@ -8,7 +8,7 @@ module.exports.init = function* (router) {
   console.log('======articles========');
   // yield seed;
   console.log('hihihihihihi2');
-  router.get('/articles', articleList);
+  router.post('/articles', articleList);
   router.get('/articles/:id', articleDetail);
   router.post('/articles/:id', articleDetail);
   router.post('/getArticleLists', getArticleLists);
@@ -20,7 +20,7 @@ function* seed() {
   console.log('========hahahaha=========');
 }
 function* articleList(){
-  console.log(this.request.body);
+  // console.log(this.request.body);
   let obj = this.request.body
   yield Article
         .insertOne({
@@ -44,20 +44,21 @@ function* articleList(){
   console.log('=========articleList=========')
 }
 function* getArticleLists() {
-  yield Article
+  let articleList = yield Article
         .find()
         .exec()
-        .then(function(data){
-          console.log(data);
-          console.log('get article list done');
+        .then((data)=>{
+          console.log(data+'========');
+          this.status = 200;
+          this.body = {
+            success: true,
+            data: data
+          }
         })
         .catch(function(){
           console.log('select article error');
         })
-      this.status = 200;
-      this.body = {
-        success: true
-      }
+
 }
 function* articleDetail(){
   console.log('==========articleDetail============');
